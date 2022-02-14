@@ -1,8 +1,17 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:rabit_teste/app/components/premium_screen/premium_button.dart';
+import 'package:rabit_teste/app/components/premium_screen/premium_container.dart';
 
-class PremiumScreen extends StatelessWidget {
+class PremiumScreen extends StatefulWidget {
   const PremiumScreen({Key? key}) : super(key: key);
 
+  @override
+  State<PremiumScreen> createState() => _PremiumScreenState();
+}
+
+class _PremiumScreenState extends State<PremiumScreen> {
+  bool showAnimation = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,52 +21,99 @@ class PremiumScreen extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) {
-                return Dialog(
-                  elevation: 0,
-                  backgroundColor: Colors.transparent,
-                  child: Container(
-                    height: 600,
-                    child: Stack(
-                      children: [
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                            color: Colors.amber,
-                            height: 100,
-                            width: MediaQuery.of(context).size.width - 100,
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                            color: Colors.red,
-                            height: 400,
-                            width: MediaQuery.of(context).size.width - 100,
-                          ),
-                        ),
-                        Positioned(
-                          left: 80,
-                          top: 470,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Container(
-                              width: 170,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Color(0xff7c78e6)),
-                              child: const Center(
-                                  child: Text(
-                                "Vamos lá",
-                                style: TextStyle(
-                                    fontSize: 27, color: Color(0xfff9f9f9)),
-                              )),
+                return StatefulBuilder(
+                  builder: (context, setState) {
+                    Timer(
+                      const Duration(milliseconds: 1),
+                      (() {
+                        setState(() {
+                          showAnimation = true;
+                        });
+                      }),
+                    );
+                    return Dialog(
+                      insetPadding: EdgeInsets.zero,
+                      elevation: 0,
+                      backgroundColor: Colors.transparent,
+                      child: SizedBox(
+                        height: 700,
+                        child: Stack(
+                          children: [
+                            ...List.generate(3, (index) {
+                              List<double> listTop = [
+                                showAnimation ? 1 : 70,
+                                showAnimation ? 1 : 70,
+                                showAnimation ? 20 : 70,
+                              ];
+                              List<double> listLeft = [
+                                220,
+                                260,
+                                280,
+                              ];
+                              return AnimatedPositioned(
+                                top: listTop[index],
+                                left: listLeft[index],
+                                child: Image.asset(
+                                    'assets/images/star-firework${index + 1}.png'),
+                                duration: const Duration(
+                                  milliseconds: 500,
+                                ),
+                              );
+                            }),
+                            ...List.generate(6, (index) {
+                              List<String> listImages = [
+                                'assets/images/star-top.png',
+                                'assets/images/ministar1.png',
+                                'assets/images/ministar2.png',
+                                'assets/images/ministar3.png',
+                                'assets/images/firework-blue.png',
+                                'assets/images/firework-yellow.png',
+                              ];
+                              List<double> listTop = [
+                                65,
+                                30,
+                                10,
+                                40,
+                                0,
+                                85,
+                              ];
+                              List<double> listLeft = [
+                                30,
+                                262,
+                                315,
+                                315,
+                                335,
+                                210,
+                              ];
+                              return Positioned(
+                                top: listTop[index],
+                                left: listLeft[index],
+                                child: AnimatedOpacity(
+                                  opacity: showAnimation ? 1 : 0,
+                                  duration: const Duration(milliseconds: 500),
+                                  child: Image.asset(listImages[index]),
+                                ),
+                              );
+                            }),
+                            const Align(
+                                alignment: Alignment.center,
+                                child: PremiumContainer()),
+                            Positioned(
+                              left: 320,
+                              top: 570,
+                              child:
+                                  Image.asset('assets/images/star-bottom.png'),
                             ),
-                          ),
+                            const Positioned(
+                              left: 100,
+                              top: 570,
+                              child: PremiumButton(),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
+                      ),
+                    );
+                  },
                 );
               },
             );
