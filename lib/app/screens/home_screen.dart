@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rabit_teste/app/screens/premium_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,7 +14,14 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PremiumScreen(),
+                  ),
+                );
+              },
               child: const Text("Tela 1"),
             ),
             ElevatedButton(
