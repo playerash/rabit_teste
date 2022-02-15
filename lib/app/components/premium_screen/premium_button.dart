@@ -11,7 +11,8 @@ class PremiumButton extends StatelessWidget {
         width: 198,
         height: 50,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30), color: Color(0xff7c78e6)),
+            borderRadius: BorderRadius.circular(30),
+            color: const Color(0xff7c78e6)),
         child: const Center(
             child: Text(
           "Vamos lá",

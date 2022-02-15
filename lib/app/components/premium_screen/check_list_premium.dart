@@ -11,22 +11,22 @@ class CheckListPremium extends StatelessWidget {
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             CheckItens("Metas"),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             CheckItens("Rotinas"),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             CheckItens("2x Moedas"),
           ],
         ),
         const SizedBox(width: 15),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             CheckItens("To Do List"),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             CheckItens("Salvar na núvem"),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             CheckItens("Marcar dias anteriores"),
           ],
         ),

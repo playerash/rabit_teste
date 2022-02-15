@@ -1,12 +1,13 @@
 import 'dart:async';
-
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:rabit_teste/app/components/timer_screen/app_bar_timer.dart';
 import 'package:rabit_teste/app/components/timer_screen/circular_timer.dart';
 import 'package:rabit_teste/app/components/timer_screen/done_button.dart';
+import 'package:rabit_teste/app/components/timer_screen/image_timer.dart';
 import 'package:rabit_teste/app/components/timer_screen/play_pause_button.dart';
 import 'package:rabit_teste/app/components/timer_screen/text_watch.dart';
+import 'package:rabit_teste/app/components/timer_screen/title_timer.dart';
 
 class TimerScreen extends StatefulWidget {
   const TimerScreen({Key? key}) : super(key: key);
@@ -40,6 +41,7 @@ class _TimerScreenState extends State<TimerScreen> {
   Stopwatch stopwatch = Stopwatch();
   String stopwatchText = '00:00';
   final timeout = const Duration(seconds: 1);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,29 +58,14 @@ class _TimerScreenState extends State<TimerScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const AppBarTimer(),
-              const Text(
-                "ESTUDAR\nMATEMÁTICA",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xffD572C8),
-                  fontFamily: 'Fira-Sans',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 27,
-                ),
-              ),
+              const TitleTimer("ESTUDAR\nMATEMÁTICA"),
               const SizedBox(height: 10),
               SizedBox(
                 height: 300,
                 child: Stack(
                   children: [
                     TextWatch(stopwatchText),
-                    Align(
-                      alignment: const Alignment(0, -0.2),
-                      child: Image.asset(
-                        'assets/images/cacto.png',
-                        scale: 0.6,
-                      ),
-                    ),
+                    const ImageTimer('assets/images/cacto.png'),
                     CircularTimer(timerController, stopwatch)
                   ],
                 ),

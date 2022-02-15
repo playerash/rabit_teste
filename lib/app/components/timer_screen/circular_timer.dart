@@ -2,9 +2,9 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 
 class CircularTimer extends StatelessWidget {
-  CountDownController timerController;
-  Stopwatch stopwatch;
-  CircularTimer(this.timerController, this.stopwatch, {Key? key})
+  final CountDownController timerController;
+  final Stopwatch stopwatch;
+  const CircularTimer(this.timerController, this.stopwatch, {Key? key})
       : super(key: key);
 
   @override
@@ -16,8 +16,8 @@ class CircularTimer extends StatelessWidget {
         controller: timerController,
         width: MediaQuery.of(context).size.width / 1.7,
         height: MediaQuery.of(context).size.height / 1.7,
-        ringColor: Color(0xff282A37),
-        fillColor: Color(0xff9EAEC7),
+        ringColor: const Color(0xff282A37),
+        fillColor: const Color(0xff9EAEC7),
         fillGradient: null,
         strokeWidth: 20.0,
         strokeCap: StrokeCap.round,

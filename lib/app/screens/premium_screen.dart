@@ -99,7 +99,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
                                 alignment: Alignment.center,
                                 child: PremiumContainer()),
                             Align(
-                              alignment: Alignment(1, 0.8),
+                              alignment: const Alignment(1, 0.8),
                               child: FractionallySizedBox(
                                   heightFactor: 0.1,
                                   widthFactor: 0.2,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TextWatch extends StatelessWidget {
-  String stopwatchText;
-  TextWatch(this.stopwatchText, {Key? key}) : super(key: key);
+  final String stopwatchText;
+  const TextWatch(this.stopwatchText, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PlayPauseButton extends StatelessWidget {
-  int timerState;
-  PlayPauseButton(this.timerState, {Key? key}) : super(key: key);
+  final int timerState;
+  const PlayPauseButton(this.timerState, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

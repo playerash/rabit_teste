@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CheckItens extends StatelessWidget {
-  String name;
-  CheckItens(this.name, {Key? key}) : super(key: key);
+  final String name;
+  const CheckItens(this.name, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,15 +10,13 @@ class CheckItens extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 10,
-          backgroundColor: Color(0xff9cfce6),
+          backgroundColor: const Color(0xff9cfce6),
           child: Image.asset("assets/images/check.png"),
         ),
-        SizedBox(
-          width: 8,
-        ),
+        const SizedBox(width: 8),
         Text(
           name,
-          style: TextStyle(color: Color(0xff9EAEC7)),
+          style: const TextStyle(color: Color(0xff9EAEC7)),
         ),
       ],
     );
