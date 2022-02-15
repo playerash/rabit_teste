@@ -34,6 +34,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  circular_countdown_timer: ^0.2.0
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,9 @@ flutter:
     - assets/images/ministar1.png
     - assets/images/ministar2.png
     - assets/images/ministar3.png
+    - assets/images/timer.png
+    - assets/images/pause.png
+    - assets/images/cacto.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -90,11 +94,15 @@ flutter:
         - asset: assets/fonts/FiraSans-Regular.ttf
         - asset: assets/fonts/FiraSans-Bold.ttf
           weight: 700
+        - asset: assets/fonts/FiraSans-SemiBold.ttf
+          weight: 600
     - family: Baloo-Chettan2
       fonts:
         - asset: assets/fonts/BalooChettan2-Regular.ttf
         - asset: assets/fonts/BalooChettan2-Bold.ttf
           weight: 700
+        - asset: assets/fonts/BalooChettan2-SemiBold.ttf
+          weight: 600
   
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

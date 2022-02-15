@@ -98,16 +98,21 @@ class _PremiumScreenState extends State<PremiumScreen> {
                             const Align(
                                 alignment: Alignment.center,
                                 child: PremiumContainer()),
-                            Positioned(
-                              left: 320,
-                              top: 570,
-                              child:
-                                  Image.asset('assets/images/star-bottom.png'),
+                            Align(
+                              alignment: Alignment(1, 0.8),
+                              child: FractionallySizedBox(
+                                  heightFactor: 0.1,
+                                  widthFactor: 0.2,
+                                  child: Image.asset(
+                                      'assets/images/star-bottom.png')),
                             ),
-                            const Positioned(
-                              left: 100,
-                              top: 570,
-                              child: PremiumButton(),
+                            const Align(
+                              alignment: Alignment(0.0, 0.8),
+                              child: FractionallySizedBox(
+                                heightFactor: 0.08,
+                                widthFactor: 0.45,
+                                child: PremiumButton(),
+                              ),
                             ),
                           ],
                         ),

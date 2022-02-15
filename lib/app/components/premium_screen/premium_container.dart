@@ -12,13 +12,14 @@ class PremiumContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       height: 500,
-      width: MediaQuery.of(context).size.width - 50,
+      width: MediaQuery.of(context).size.width - 40,
       child: Padding(
-        padding: const EdgeInsets.only(left: 30, top: 30),
+        padding: const EdgeInsets.only(left: 20, top: 30, right: 20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
                   "Bem-Vindo\nà nossa toca!",
